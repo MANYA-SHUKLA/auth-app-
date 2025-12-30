@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import {
   Container,
@@ -13,7 +13,6 @@ import {
   IconButton,
   Alert,
   Fade,
-  Slide,
 } from '@mui/material';
 import { Visibility, VisibilityOff, Email, Lock } from '@mui/icons-material';
 import Link from 'next/link';
@@ -22,114 +21,133 @@ import { motion } from 'framer-motion';
 import FloatingShapes from '@/app/components/FloatingShapes';
 import ThemeToggle from '@/app/components/ThemeToggle';
 import { useTheme } from '@mui/material/styles';
+import { ROUTES, API_DELAYS } from '@/constants';
+import type { FormSubmitState } from '@/types';
 
-// This is the login page where users sign in to their account
-// It checks that the email and password are valid before submitting
+/**
+ * Login page component - Handles user authentication
+ * Users enter their email and password to sign in to their account
+ */
 export default function LoginPage() {
+  // Get the current theme to check if we're in dark mode
   const theme = useTheme();
   const isDark = theme.palette.mode === 'dark';
-  
-  // Keep track of what the user types in the email and password fields
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  
-  // Keep track of any errors to show the user (like "email is invalid")
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  
-  // Keep track of whether we're submitting the form and if it was successful
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
-  const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  // When the user types in the email field, check if it's valid
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // Store what the user types in the email field
+  const [email, setEmail] = useState('');
+  // Store what the user types in the password field
+  const [password, setPassword] = useState('');
+  // Track whether the password should be visible or hidden (eye icon toggle)
+  const [showPassword, setShowPassword] = useState(false);
+  // Store any error message for the email field (like "email is invalid")
+  const [emailError, setEmailError] = useState('');
+  // Store any error message for the password field (like "password too short")
+  const [passwordError, setPasswordError] = useState('');
+  // Track the form submission state - whether it's submitting, if there's an error, or if it succeeded
+  const [submitState, setSubmitState] = useState<FormSubmitState>({
+    isSubmitting: false,
+    error: '',
+    success: false,
+  });
+
+  // This function runs every time the user types in the email field
+  const handleEmailChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    // Update the email state with what the user typed
     setEmail(value);
-    
-    // Remove any error message when they start typing again
+    // If there was an error before, clear it when they start typing again
     if (emailError) {
       setEmailError('');
     }
-    
-    // Check if the email looks valid as they type
+    // If they've typed something, check if it's a valid email
     if (value) {
-      const error = validateEmail(value);
-      setEmailError(error);
+      setEmailError(validateEmail(value));
     }
-  };
+  }, [emailError]);
 
-  // When the user types in the password field, check if it's valid
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // This function runs every time the user types in the password field
+  const handlePasswordChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+    // Update the password state with what the user typed
     setPassword(value);
-    
-    // Remove any error message when they start typing again
+    // If there was an error before, clear it when they start typing again
     if (passwordError) {
       setPasswordError('');
     }
-    
-    // Check if the password is long enough as they type
+    // If they've typed something, check if it meets the minimum requirements
     if (value) {
-      const error = validatePassword(value);
-      setPasswordError(error);
+      setPasswordError(validatePassword(value));
     }
-  };
+  }, [passwordError]);
 
-  // When the user clicks the login button, check everything and try to log them in
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  // This function runs when the user clicks the "Sign In" button
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
+    // Prevent the form from submitting normally (which would refresh the page)
     e.preventDefault();
-    
-    // Clear any old error or success messages
-    setSubmitError('');
-    setSubmitSuccess(false);
-    
-    // Make sure both email and password are valid
+
+    // Reset any previous error or success messages
+    setSubmitState({ isSubmitting: false, error: '', success: false });
+
+    // Check if both email and password are valid
     const emailValidation = validateEmail(email);
     const passwordValidation = validatePassword(password);
-    
+
+    // Show any validation errors to the user
     setEmailError(emailValidation);
     setPasswordError(passwordValidation);
-    
-    // If something is wrong, stop here and show the errors
+
+    // If there are any errors, stop here and don't try to log in
     if (emailValidation || passwordValidation) {
       return;
     }
-    
-    // Show that we're trying to log in
-    setIsSubmitting(true);
-    
-    // In a real app, this would send the login info to a server
-    // For now, we just wait a moment to simulate that
+
+    // Mark that we're now trying to log in (this disables the button and shows "Signing in...")
+    setSubmitState((prev) => ({ ...prev, isSubmitting: true }));
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
-      // In a real application, you would make an API call here
-      // const response = await fetch('/api/login', { ... });
-      
-      setSubmitSuccess(true);
-      
-      // Clear the form after showing success message
+      // Simulate sending the login request to a server (in a real app, this would be an API call)
+      await new Promise((resolve) => setTimeout(resolve, API_DELAYS.LOGIN));
+      // If successful, show a success message
+      setSubmitState({ isSubmitting: false, error: '', success: true });
+
+      // After showing success, clear the form and reset everything
       setTimeout(() => {
         setEmail('');
         setPassword('');
-        setSubmitSuccess(false);
-      }, 2000);
+        setSubmitState({ isSubmitting: false, error: '', success: false });
+      }, API_DELAYS.SUCCESS_MESSAGE);
     } catch {
-      setSubmitError('Login failed. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+      // If something went wrong, show an error message
+      setSubmitState((prev) => ({
+        ...prev,
+        isSubmitting: false,
+        error: 'Login failed. Please try again.',
+      }));
     }
+  }, [email, password]);
+
+  // Set the background color based on dark/light mode
+  const backgroundGradient = isDark
+    ? 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%)'
+    : 'linear-gradient(135deg, #eef2ff 0%, #faf5ff 50%, #fdf2f8 100%)';
+
+  // Styles for the main form container (the white/dark card)
+  const paperStyles = {
+    background: isDark ? 'rgba(30, 41, 59, 0.8)' : 'rgba(255, 255, 255, 0.9)',
+    backdropFilter: 'blur(10px)',
+    borderRadius: '24px',
+    boxShadow: isDark
+      ? '0 20px 60px rgba(0, 0, 0, 0.5)'
+      : '0 20px 60px rgba(0, 0, 0, 0.1)',
+    border: `1px solid ${isDark ? 'rgba(99, 102, 241, 0.2)' : 'rgba(255, 255, 255, 0.2)'}`,
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   };
 
   return (
     <Box
       className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 relative"
       sx={{
-        background: isDark
-          ? 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%)'
-          : 'linear-gradient(135deg, #eef2ff 0%, #faf5ff 50%, #fdf2f8 100%)',
+        background: backgroundGradient,
         position: 'relative',
         overflow: 'hidden',
         transition: 'background 0.3s ease',
@@ -155,27 +173,15 @@ export default function LoginPage() {
           <Paper
             elevation={0}
             component={motion.div}
-            whileHover={{ 
+            whileHover={{
               scale: 1.02,
-              boxShadow: isDark 
+              boxShadow: isDark
                 ? '0 25px 70px rgba(99, 102, 241, 0.3)'
                 : '0 25px 70px rgba(99, 102, 241, 0.2)',
             }}
             className="p-8 sm:p-10 rounded-3xl shadow-2xl backdrop-blur-sm"
-            sx={{
-              background: isDark
-                ? 'rgba(30, 41, 59, 0.8)'
-                : 'rgba(255, 255, 255, 0.9)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: '24px',
-              boxShadow: isDark
-                ? '0 20px 60px rgba(0, 0, 0, 0.5)'
-                : '0 20px 60px rgba(0, 0, 0, 0.1)',
-              border: `1px solid ${isDark ? 'rgba(99, 102, 241, 0.2)' : 'rgba(255, 255, 255, 0.2)'}`,
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            }}
+            sx={paperStyles}
           >
-            {/* Decorative image at the top */}
             <Fade in={true} timeout={700}>
               <Box
                 sx={{
@@ -204,42 +210,35 @@ export default function LoginPage() {
                 />
               </Box>
             </Fade>
-            {/* The "Welcome Back" heading at the top of the form */}
+
             <Fade in={true} timeout={800}>
               <Box className="text-center mb-8">
                 <Typography
                   variant="h4"
-                  className="mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold"
                   sx={{
                     background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     fontWeight: 700,
                     letterSpacing: '-0.02em',
+                    mb: 2,
                   }}
                 >
                   Welcome Back
                 </Typography>
-                <Typography
-                  variant="body2"
-                  className="text-gray-600"
-                  sx={{ color: '#6b7280' }}
-                >
+                <Typography variant="body2" sx={{ color: '#6b7280' }}>
                   Sign in to your account to continue
                 </Typography>
               </Box>
             </Fade>
 
-            {/* Show a green success message if login worked */}
-            {submitSuccess && (
-              <Fade in={submitSuccess}>
+            {/* Show a green success message if login was successful */}
+            {submitState.success && (
+              <Fade in={submitState.success}>
                 <Alert
                   severity="success"
                   className="mb-6 rounded-xl"
-                  sx={{
-                    borderRadius: '12px',
-                    animation: 'slideIn 0.3s ease-out',
-                  }}
+                  sx={{ borderRadius: '12px' }}
                 >
                   Login successful! Redirecting...
                 </Alert>
@@ -247,29 +246,26 @@ export default function LoginPage() {
             )}
 
             {/* Show a red error message if something went wrong */}
-            {submitError && (
-              <Fade in={!!submitError}>
+            {submitState.error && (
+              <Fade in={!!submitState.error}>
                 <Alert
                   severity="error"
                   className="mb-6 rounded-xl"
-                  sx={{
-                    borderRadius: '12px',
-                    animation: 'slideIn 0.3s ease-out',
-                  }}
+                  sx={{ borderRadius: '12px' }}
                 >
-                  {submitError}
+                  {submitState.error}
                 </Alert>
               </Fade>
             )}
 
-            {/* The form with email and password fields */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
+              {/* The login form with email and password fields */}
               <Box component="form" onSubmit={handleSubmit} className="space-y-6">
-                {/* Where the user types their email address */}
+                {/* Email input field with animation */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -277,45 +273,46 @@ export default function LoginPage() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <TextField
-                  fullWidth
-                  label="Email Address"
-                  type="email"
-                  value={email}
-                  onChange={handleEmailChange}
-                  onBlur={() => {
-                    if (email) {
-                      setEmailError(validateEmail(email));
-                    }
-                  }}
-                  error={!!emailError}
-                  helperText={emailError}
-                  placeholder="shuklamanya99@gmail.com"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Email className="text-indigo-500" />
-                      </InputAdornment>
-                    ),
-                  }}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      '&:hover fieldset': {
-                        borderColor: '#6366f1',
+                    fullWidth
+                    label="Email Address"
+                    type="email"
+                    value={email}
+                    onChange={handleEmailChange}
+                    // When user clicks away from the field, validate the email one more time
+                    onBlur={() => {
+                      if (email) {
+                        setEmailError(validateEmail(email));
+                      }
+                    }}
+                    error={!!emailError}
+                    helperText={emailError}
+                    placeholder="shuklamanya99@gmail.com"
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <Email className="text-indigo-500" />
+                        </InputAdornment>
+                      ),
+                    }}
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        '&:hover fieldset': {
+                          borderColor: '#6366f1',
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: '#6366f1',
+                          borderWidth: '2px',
+                        },
                       },
-                      '&.Mui-focused fieldset': {
-                        borderColor: '#6366f1',
-                        borderWidth: '2px',
+                      '& .MuiInputLabel-root.Mui-focused': {
+                        color: '#6366f1',
                       },
-                    },
-                    '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#6366f1',
-                    },
-                  }}
-                  className="transition-all duration-300"
+                    }}
+                    className="transition-all duration-300"
                   />
                 </motion.div>
 
-                {/* Where the user types their password */}
+                {/* Password input field with show/hide toggle */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -323,61 +320,65 @@ export default function LoginPage() {
                   whileHover={{ scale: 1.02 }}
                 >
                   <TextField
-                  fullWidth
-                  label="Password"
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  onChange={handlePasswordChange}
-                  onBlur={() => {
-                    if (password) {
-                      setPasswordError(validatePassword(password));
-                    }
-                  }}
-                  error={!!passwordError}
-                  helperText={passwordError}
-                  placeholder="Enter your password"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Lock className="text-indigo-500" />
-                      </InputAdornment>
-                    ),
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={() => setShowPassword(!showPassword)}
-                          edge="end"
-                          className="text-gray-500 hover:text-indigo-600 transition-colors"
-                          sx={{
-                            '&:hover': {
-                              backgroundColor: 'rgba(99, 102, 241, 0.1)',
-                            },
-                          }}
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      '&:hover fieldset': {
-                        borderColor: '#6366f1',
+                    fullWidth
+                    label="Password"
+                    // Show password as text or dots based on the toggle
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={handlePasswordChange}
+                    // When user clicks away from the field, validate the password one more time
+                    onBlur={() => {
+                      if (password) {
+                        setPasswordError(validatePassword(password));
+                      }
+                    }}
+                    error={!!passwordError}
+                    helperText={passwordError}
+                    placeholder="Enter your password"
+                    InputProps={{
+                      // Lock icon on the left side
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <Lock className="text-indigo-500" />
+                        </InputAdornment>
+                      ),
+                      // Eye icon on the right side to toggle password visibility
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            onClick={() => setShowPassword(!showPassword)}
+                            edge="end"
+                            aria-label="toggle password visibility"
+                            sx={{
+                              '&:hover': {
+                                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                              },
+                            }}
+                          >
+                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    sx={{
+                      '& .MuiOutlinedInput-root': {
+                        '&:hover fieldset': {
+                          borderColor: '#6366f1',
+                        },
+                        '&.Mui-focused fieldset': {
+                          borderColor: '#6366f1',
+                          borderWidth: '2px',
+                        },
                       },
-                      '&.Mui-focused fieldset': {
-                        borderColor: '#6366f1',
-                        borderWidth: '2px',
+                      '& .MuiInputLabel-root.Mui-focused': {
+                        color: '#6366f1',
                       },
-                    },
-                    '& .MuiInputLabel-root.Mui-focused': {
-                      color: '#6366f1',
-                    },
-                  }}
-                  className="transition-all duration-300"
+                    }}
+                    className="transition-all duration-300"
                   />
                 </motion.div>
 
-                {/* The "Sign In" button that submits the form */}
+                {/* Submit button - disabled while the form is being submitted */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -389,8 +390,8 @@ export default function LoginPage() {
                     type="submit"
                     fullWidth
                     variant="contained"
-                    disabled={isSubmitting}
-                    className="py-3 mt-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                    // Disable the button while we're trying to log in
+                    disabled={submitState.isSubmitting}
                     sx={{
                       background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
                       padding: '14px 24px',
@@ -399,6 +400,7 @@ export default function LoginPage() {
                       borderRadius: '12px',
                       textTransform: 'none',
                       boxShadow: '0 4px 14px rgba(99, 102, 241, 0.4)',
+                      mt: 3,
                       '&:hover': {
                         background: 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
                         boxShadow: '0 6px 20px rgba(99, 102, 241, 0.5)',
@@ -412,21 +414,21 @@ export default function LoginPage() {
                       },
                     }}
                   >
-                    {isSubmitting ? 'Signing in...' : 'Sign In'}
+                    {submitState.isSubmitting ? 'Signing in...' : 'Sign In'}
                   </Button>
                 </motion.div>
 
-                {/* Link to go to the signup page if they don't have an account */}
+                {/* Link to the signup page for users who don't have an account yet */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.7 }}
                 >
                   <Box className="text-center mt-6">
-                    <Typography variant="body2" className="text-gray-600">
+                    <Typography variant="body2" sx={{ color: '#6b7280' }}>
                       Don&apos;t have an account?{' '}
                       <Link
-                        href="/signup"
+                        href={ROUTES.SIGNUP}
                         className="text-indigo-600 hover:text-indigo-800 font-semibold transition-colors duration-200 hover:underline"
                       >
                         Sign up
@@ -442,4 +444,3 @@ export default function LoginPage() {
     </Box>
   );
 }
-

@@ -7,6 +7,9 @@ interface LayoutWrapperProps {
   children: React.ReactNode;
 }
 
+/**
+ * Layout wrapper component - Provides consistent layout structure with footer
+ */
 export default function LayoutWrapper({ children }: LayoutWrapperProps) {
   return (
     <Box
@@ -18,11 +21,10 @@ export default function LayoutWrapper({ children }: LayoutWrapperProps) {
       }}
       suppressHydrationWarning
     >
-      <Box component="div" sx={{ flex: 1 }} suppressHydrationWarning>
+      <Box component="main" sx={{ flex: 1 }} suppressHydrationWarning>
         {children}
       </Box>
       <Footer />
     </Box>
   );
 }
-

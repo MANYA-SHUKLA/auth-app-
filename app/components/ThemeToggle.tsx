@@ -5,19 +5,28 @@ import { Brightness4, Brightness7 } from '@mui/icons-material';
 import { useThemeMode } from '@/app/providers/theme-provider';
 import { motion } from 'framer-motion';
 
-// This button lets you switch between light and dark mode
-// Click it to change the theme of the entire app
+/**
+ * Theme toggle button component - Allows users to switch between light and dark mode
+ * This button appears in the top right corner of every page
+ */
 export default function ThemeToggle() {
+  // Get the current theme mode and the function to switch between light and dark
   const { mode, toggleTheme } = useThemeMode();
 
   return (
-    <Tooltip title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+    // Show a tooltip when user hovers over the button
+    <Tooltip
+      title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+      arrow
+    >
+      {/* Add smooth animation when hovering or clicking */}
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
         <IconButton
           onClick={toggleTheme}
+          aria-label={`Switch to ${mode === 'dark' ? 'light' : 'dark'} mode`}
           sx={{
             color: 'text.primary',
             backgroundColor: 'background.paper',
@@ -28,12 +37,11 @@ export default function ThemeToggle() {
             },
             transition: 'all 0.3s ease',
           }}
-          aria-label="toggle theme"
         >
+          {/* Show sun icon in dark mode (to switch to light), moon icon in light mode (to switch to dark) */}
           {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
         </IconButton>
       </motion.div>
     </Tooltip>
   );
 }
-
