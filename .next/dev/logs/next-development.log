@@ -1,0 +1,965 @@
+[00:00:00.720] Server  LOG     ✓ Ready in 549ms
+[00:00:36.414] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.724] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:54.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:05.176] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:33.598] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:02.517] Server  LOG     ✓ Compiled in 22ms
+[00:03:03.268] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:11.412] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:14.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:14.745] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <body className="geist_a715...">
+      <MUIThemeProvider>
+        <ThemeProvider theme={{...}}>
+          <ThemeProviderNoVars theme={{...}}>
+            <ThemeProvider themeId={undefined} theme={{...}}>
+              <ThemeProvider theme={{...}}>
+                <RtlProvider value={false}>
+                  <DefaultPropsProvider value={{...}}>
+                    <CssBaseline>
+                    <Box sx={{display:"flex", ...}}>
+                      <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                        <Insertion>
++                       <div className="MuiBox-root css-zf0iqh">
+-                       <style data-emotion="css-global 172m396" data-s="">
+
+[00:03:26.464] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:50.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:18.014] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:35.041] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:51.140] Server  LOG     ✓ Compiled in 12ms
+[00:06:15.169] Browser ERROR   ./app/login/page.tsx:374:17
+Parsing ecmascript source code failed
+  372 |             </Fade>
+  373 |           </Paper>
+> 374 |         </Slide>
+      |                 ^
+> 375 |       </Container>
+      | ^^^^^^^
+  376 |     </Box>
+  377 |   );
+  378 | }
+
+Expected '</', got 'jsx text (
+      )'
+
+Import traces:
+  Client Component Browser:
+    ./app/login/page.tsx [Client Component Browser]
+    ./app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/login/page.tsx [Client Component SSR]
+    ./app/login/page.tsx [Server Component]
+[00:06:19.362] Browser ERROR   ./app/login/page.tsx:381:21
+Parsing ecmascript source code failed
+  379 |                   </Typography>
+  380 |                 </Box>
+> 381 |               </Box>
+      |                     ^
+> 382 |             </Fade>
+      | ^^^^^^^^^^^^^
+  383 |           </Paper>
+  384 |         </Slide>
+  385 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/login/page.tsx [Client Component Browser]
+    ./app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/login/page.tsx [Client Component SSR]
+    ./app/login/page.tsx [Server Component]
+[00:06:20.684] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:20.832] Browser ERROR   ./app/login/page.tsx:381:21
+Parsing ecmascript source code failed
+  379 |                   </Typography>
+  380 |                 </Box>
+> 381 |               </Box>
+      |                     ^
+> 382 |             </Fade>
+      | ^^^^^^^^^^^^^
+  383 |           </Paper>
+  384 |         </Slide>
+  385 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/login/page.tsx [Client Component Browser]
+    ./app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/login/page.tsx [Client Component SSR]
+    ./app/login/page.tsx [Server Component]
+[00:06:20.833] Browser ERROR   ./app/login/page.tsx:381:21
+Parsing ecmascript source code failed
+  379 |                   </Typography>
+  380 |                 </Box>
+> 381 |               </Box>
+      |                     ^
+> 382 |             </Fade>
+      | ^^^^^^^^^^^^^
+  383 |           </Paper>
+  384 |         </Slide>
+  385 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/login/page.tsx [Client Component Browser]
+    ./app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/login/page.tsx [Client Component SSR]
+    ./app/login/page.tsx [Server Component]
+[00:06:21.817] Browser ERROR   ./app/login/page.tsx:388:21
+Parsing ecmascript source code failed
+  386 |                   </Typography>
+  387 |                 </Box>
+> 388 |               </Box>
+      |                     ^
+> 389 |             </Fade>
+      | ^^^^^^^^^^^^^
+  390 |           </Paper>
+  391 |         </Slide>
+  392 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/login/page.tsx [Client Component Browser]
+    ./app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/login/page.tsx [Client Component SSR]
+    ./app/login/page.tsx [Server Component]
+[00:06:27.885] Browser ERROR   ./app/login/page.tsx:402:21
+Parsing ecmascript source code failed
+  400 |                   </Typography>
+  401 |                 </Box>
+> 402 |               </Box>
+      |                     ^
+> 403 |             </Fade>
+      | ^^^^^^^^^^^^^
+  404 |           </Paper>
+  405 |         </Slide>
+  406 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/login/page.tsx [Client Component Browser]
+    ./app/login/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/login/page.tsx [Client Component SSR]
+    ./app/login/page.tsx [Server Component]
+[00:06:34.677] Server  LOG     ✓ Compiled in 219ms
+[00:07:05.286] Browser ERROR   ./app/signup/page.tsx:611:17
+Parsing ecmascript source code failed
+  609 |             </Fade>
+  610 |           </Paper>
+> 611 |         </Slide>
+      |                 ^
+> 612 |       </Container>
+      | ^^^^^^^
+  613 |     </Box>
+  614 |   );
+  615 | }
+
+Expected '</', got 'jsx text (
+      )'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[00:07:11.772] Browser ERROR   ./app/signup/page.tsx:618:21
+Parsing ecmascript source code failed
+  616 |                   </Typography>
+  617 |                 </Box>
+> 618 |               </Box>
+      |                     ^
+> 619 |             </Fade>
+      | ^^^^^^^^^^^^^
+  620 |           </Paper>
+  621 |         </Slide>
+  622 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[00:07:14.330] Browser ERROR   ./app/signup/page.tsx:625:21
+Parsing ecmascript source code failed
+  623 |                   </Typography>
+  624 |                 </Box>
+> 625 |               </Box>
+      |                     ^
+> 626 |             </Fade>
+      | ^^^^^^^^^^^^^
+  627 |           </Paper>
+  628 |         </Slide>
+  629 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[00:07:17.108] Browser ERROR   ./app/signup/page.tsx:632:21
+Parsing ecmascript source code failed
+  630 |                   </Typography>
+  631 |                 </Box>
+> 632 |               </Box>
+      |                     ^
+> 633 |             </Fade>
+      | ^^^^^^^^^^^^^
+  634 |           </Paper>
+  635 |         </Slide>
+  636 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[00:07:22.052] Browser ERROR   ./app/signup/page.tsx:639:21
+Parsing ecmascript source code failed
+  637 |                   </Typography>
+  638 |                 </Box>
+> 639 |               </Box>
+      |                     ^
+> 640 |             </Fade>
+      | ^^^^^^^^^^^^^
+  641 |           </Paper>
+  642 |         </Slide>
+  643 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[00:07:24.809] Browser ERROR   ./app/signup/page.tsx:647:21
+Parsing ecmascript source code failed
+  645 |                   </Typography>
+  646 |                 </Box>
+> 647 |               </Box>
+      |                     ^
+> 648 |             </Fade>
+      | ^^^^^^^^^^^^^
+  649 |           </Paper>
+  650 |         </Slide>
+  651 |       </Container>
+
+Expected '</', got 'jsx text (
+            )'
+
+Import traces:
+  Client Component Browser:
+    ./app/signup/page.tsx [Client Component Browser]
+    ./app/signup/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/signup/page.tsx [Client Component SSR]
+    ./app/signup/page.tsx [Server Component]
+[00:07:35.541] Server  LOG     ✓ Compiled in 45ms
+[00:08:25.777] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:25.912] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MUIThemeProvider>
+      <ThemeProvider theme={{...}}>
+        <ThemeProviderNoVars theme={{...}}>
+          <ThemeProvider themeId={undefined} theme={{...}}>
+            <ThemeProvider theme={{...}}>
+              <RtlProvider value={false}>
+                <DefaultPropsProvider value={{...}}>
+                  <CssBaseline>
+                  <LayoutWrapper>
+                    <Box sx={{display:"flex", ...}}>
+                      <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                        <Insertion>
++                       <div className="MuiBox-root css-zf0iqh">
+-                       <style data-emotion="css-global 172m396" data-s="">
+
+[00:08:42.114] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:04.805] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:21.326] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:25.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:35.847] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:35.969] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MUIThemeProvider>
+      <ThemeProvider theme={{...}}>
+        <ThemeProviderNoVars theme={{...}}>
+          <ThemeProvider themeId={undefined} theme={{...}}>
+            <ThemeProvider theme={{...}}>
+              <RtlProvider value={false}>
+                <DefaultPropsProvider value={{...}}>
+                  <CssBaseline>
+                  <LayoutWrapper>
+                    <Box sx={{display:"flex", ...}}>
+                      <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                        <Insertion>
++                       <div className="MuiBox-root css-zf0iqh">
+-                       <style data-emotion="css-global 172m396" data-s="">
+
+[00:09:46.843] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:51.262] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:53.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:12.504] Server  LOG     ✓ Compiled in 73ms
+[00:11:12.510] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:11:12.707] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:52.730] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:22.144] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:50.940] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:51.060] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box sx={{display:"flex", ...}}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh">
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:12:56.988] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:38.472] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:01.693] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:12.930] Server  LOG     ✓ Compiled in 68ms
+[00:15:21.897] Server  LOG     ✓ Compiled in 14ms
+[00:15:30.346] Server  LOG     ✓ Compiled in 7ms
+[00:15:40.534] Server  LOG     ✓ Compiled in 96ms
+[00:15:54.146] Server  LOG     ✓ Compiled in 28ms
+[00:16:02.447] Server  LOG     ✓ Compiled in 7ms
+[00:16:48.733] Server  LOG     ✓ Compiled in 9ms
+[00:17:00.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:09.661] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:05.034] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:05.180] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box sx={{display:"flex", ...}}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh">
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:18:28.680] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:49.286] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:09.254] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:09.323] Server  LOG     ✓ Compiled in 21ms
+[00:19:09.491] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:23.469] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:23.522] Server  LOG     ✓ Compiled in 9ms
+[00:19:23.664] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:23.797] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box sx={{display:"flex", ...}}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh">
+-                     <style data-emotion="css-global o6gwfi" data-s="">
+
+[00:19:58.040] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:19:58.091] Server  LOG     ✓ Compiled in 9ms
+[00:19:58.260] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:02.782] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:20:02.830] Server  LOG     ✓ Compiled in 10ms
+[00:20:02.976] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:03.104] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RootLayout>
+      <html lang="en" suppressHydrationWarning={true}>
+        <head>
+        ...
+          <ThemeProvider theme={{...}}>
+            <ThemeProviderNoVars theme={{...}}>
+              <ThemeProvider themeId={undefined} theme={{...}}>
+                <ThemeProvider theme={{...}}>
+                  <RtlProvider value={false}>
+                    <DefaultPropsProvider value={{...}}>
+                      <CssBaseline>
++                     <div suppressHydrationWarning={true}>
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:20:15.111] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:20:15.161] Server  LOG     ✓ Compiled in 6ms
+[00:20:15.327] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:17.492] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:23.972] Server  LOG     ✓ Compiled in 21ms
+[00:22:16.108] Server  LOG     ✓ Compiled in 14ms
+[00:22:35.189] Server  LOG     ✓ Compiled in 13ms
+[00:23:15.914] Server  LOG     ✓ Compiled in 10ms
+[00:23:51.650] Server  LOG     ✓ Compiled in 58ms
+[00:23:56.070] Server  LOG     ✓ Compiled in 18ms
+[00:24:05.234] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:17.126] Server  LOG     ✓ Compiled in 12ms
+[00:25:01.793] Server  LOG     ✓ Compiled in 17ms
+[00:25:10.712] Server  LOG     ✓ Compiled in 31ms
+[00:25:12.081] Server  LOG     ✓ Compiled in 9ms
+[00:25:14.572] Server  LOG     ✓ Compiled in 8ms
+[00:25:15.907] Server  LOG     ✓ Compiled in 9ms
+[00:25:45.792] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:25:45.894] Server  LOG     ✓ Compiled in 14ms
+[00:25:46.124] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:23.727] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:18.692] Server  LOG     ✓ Compiled in 16ms
+[00:29:28.616] Server  LOG     ✓ Compiled in 25ms
+[00:29:34.032] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:37.083] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:29:40.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:40.480] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:29:40.480] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:29:46.628] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:56.707] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:06.333] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:19.963] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:19.963] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:30:21.233] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:21.462] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:21.462] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:30:32.146] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:34.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:34.082] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:30:34.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:30:34.912] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:30:34.912] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:30:49.163] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:31:06.909] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:31:48.573] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:48.798] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:31:48.798] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:31:55.977] Server  LOG     ✓ Compiled in 22ms
+[00:32:02.383] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:32:04.748] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:32:11.068] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:11.312] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:32:11.312] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:32:33.171] Server  LOG     ✓ Compiled in 13ms
+[00:32:51.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:32:51.894] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:32:51.894] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:33:43.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:44.045] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box sx={{display:"flex", ...}} suppressHydrationWarning={true}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} ...>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh" suppressHydrationWarning={true}>
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:33:44.045] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:33:44.045] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:33:59.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:59.613] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:33:59.613] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:34:04.904] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:34:09.123] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:34:13.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:13.679] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:34:13.679] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:34:15.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:15.447] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:34:15.447] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:42:11.143] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:11.381] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box sx={{display:"flex", ...}} suppressHydrationWarning={true}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} ...>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh" suppressHydrationWarning={true}>
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:42:11.381] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:42:11.381] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:42:45.973] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:46.430] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:42:46.430] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:42:49.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:49.462] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:42:49.462] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:43:00.666] Server  LOG     ✓ Compiled in 17ms
+[00:43:20.258] Server  LOG     ✓ Compiled in 49ms
+[00:43:47.157] Server  LOG     ✓ Compiled in 14ms
+[00:44:02.754] Server  LOG     ✓ Compiled in 21ms
+[00:44:44.713] Server  LOG     ✓ Compiled in 31ms
+[00:45:00.788] Server  LOG     ✓ Compiled in 13ms
+[00:45:04.128] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:45:04.257] Server  LOG     ✓ Compiled in 9ms
+[00:45:04.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:22.448] Server  LOG     ✓ Compiled in 15ms
+[00:46:09.401] Server  LOG     ✓ Compiled in 9ms
+[00:46:37.931] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:38.118] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:46:39.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:40.042] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:46:41.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:41.655] Browser WARN    Image with src "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:46:46.574] Server  LOG     ✓ Compiled in 14ms
+[00:46:50.011] Server  LOG     ✓ Compiled in 25ms
+[00:47:17.866] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:47:17.949] Server  LOG     ✓ Compiled in 13ms
+[00:47:18.178] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:22.284] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:47:22.424] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:25.177] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:47:25.278] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:23.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:26.274] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/lib/emotion-cache.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:48:26.359] Server  LOG     ✓ Compiled in 26ms
+[00:48:26.619] Server  ERROR   ⨯ TypeError: {imported module ./app/lib/emotion-cache.ts}.default is not a function
+[00:48:26.677] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:26.807] Browser ERROR   uncaughtError: TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$emotion$2d$cache$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__.default) is not a function
+[00:48:28.555] Server  ERROR   ⨯ TypeError: {imported module ./app/lib/emotion-cache.ts}.default is not a function
+[00:48:28.624] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:28.762] Browser ERROR   uncaughtError: TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$emotion$2d$cache$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__.default) is not a function
+[00:48:28.939] Server  ERROR   ⨯ ReferenceError: useMemo is not defined
+[00:48:28.999] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:29.131] Browser ERROR   uncaughtError: ReferenceError: useMemo is not defined
+[00:48:33.288] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:48:33.529] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:48:33.529] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:48:33.530] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:48:33.668] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:46.171] Server  LOG     ✓ Compiled in 22ms
+[00:50:11.383] Server  LOG     ✓ Compiled in 36ms
+[00:50:11.490] Browser ERROR   ./app/components/FloatingShapes.tsx:161:8
+Parsing ecmascript source code failed
+  159 |           />
+  160 |         </motion.div>
+> 161 |       ))}
+      |        ^
+  162 |
+  163 |       {/* These are smaller shapes that add more visual interest */}
+  164 |       {[...Array(8)].map((_, index) => {
+
+Expected '</', got ')'
+
+Import traces:
+  Client Component Browser:
+    ./app/components/FloatingShapes.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/components/FloatingShapes.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:50:26.977] Server  LOG     ✓ Compiled in 14ms
+[00:50:38.250] Server  LOG     ✓ Compiled in 11ms
+[00:50:46.802] Server  LOG     ✓ Compiled in 22ms
+[00:50:50.467] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:03.665] Server  LOG     ✓ Compiled in 11ms
+[00:51:20.063] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:20.195] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box sx={{display:"flex", ...}}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} sx={{display:"flex", ...}}>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh">
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:51:45.849] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/lib/emotion-cache.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:51:45.961] Server  LOG     ✓ Compiled in 30ms
+[00:51:46.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:48.080] Server  LOG     ✓ Compiled in 15ms
+[00:51:55.563] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:51:55.613] Server  LOG     ✓ Compiled in 12ms
+[00:51:55.679] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:51:55.743] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:55.878] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:52:04.510] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:04.510] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:52:04.510] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:04.566] Server  LOG     ✓ Compiled in 9ms
+[00:52:04.625] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:04.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:04.820] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:52:08.459] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:08.460] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/lib/emotion-cache.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:52:08.460] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:08.515] Server  LOG     ✓ Compiled in 8ms
+[00:52:08.572] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:08.646] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:08.783] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:52:10.094] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:10.131] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:10.212] Server  LOG     ✓ Compiled in 140ms
+[00:52:10.266] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:10.281] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:10.287] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:10.288] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:52:10.288] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:10.306] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:10.326] Server  LOG     ✓ Compiled in 0ms
+[00:52:10.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:10.513] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:52:13.085] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:13.195] Server  LOG     ✓ Compiled in 141ms
+[00:52:13.255] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:13.262] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:13.262] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:52:13.262] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:13.278] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:13.355] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:13.503] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:52:27.319] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:27.390] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:27.524] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:52:58.856] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:52:58.921] Server  LOG     ✓ Compiled in 67ms
+[00:52:59.004] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:52:59.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:59.258] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:53:03.193] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:53:03.270] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:03.412] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:53:07.450] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:07.548] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:53:07.552] Server  LOG     ✓ Compiled in 20ms
+[00:53:07.610] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:07.739] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:53:12.955] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:53:13.028] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:13.157] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:53:28.255] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:53:28.312] Server  LOG     ✓ Compiled in 16ms
+[00:53:28.383] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:53:28.448] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:28.581] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:53:53.068] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:53:53.178] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:53.311] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:54:03.447] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:54:03.498] Server  LOG     ✓ Compiled in 19ms
+[00:54:03.569] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:54:03.672] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:03.808] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:54:29.022] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:54:29.119] Server  ERROR   ⨯ Error: useThemeMode must be used within MUIThemeProvider
+[00:54:29.122] Server  LOG     ✓ Compiled in 9ms
+[00:54:29.182] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:29.314] Browser ERROR   uncaughtError: Error: useThemeMode must be used within MUIThemeProvider
+[00:55:07.105] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:07.105] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:55:07.106] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:55:07.147] Server  LOG     ✓ Compiled in 34ms
+[00:55:07.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:10.296] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:53.532] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:53.821] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box component="div" sx={{display:"flex", ...}} suppressHydrationWarning={true}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} ...>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh" suppressHydrationWarning={true}>
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:55:54.063] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:56:07.889] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:08.997] Browser WARN    Image with src "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:56:20.088] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:20.256] Server  LOG     ✓ Compiled in 45ms
+[00:56:20.344] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:56:20.645] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:23.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:27.992] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:28.510] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:56:34.210] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:56:34.291] Server  LOG     ✓ Compiled in 39ms
+[00:56:34.524] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:34.812] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ThemeProvider theme={{...}}>
+      <ThemeProviderNoVars theme={{...}}>
+        <ThemeProvider themeId={undefined} theme={{...}}>
+          <ThemeProvider theme={{...}}>
+            <RtlProvider value={false}>
+              <DefaultPropsProvider value={{...}}>
+                <CssBaseline>
+                <LayoutWrapper>
+                  <Box component="div" sx={{display:"flex", ...}} suppressHydrationWarning={true}>
+                    <Styled(div) as="div" ref={null} className="MuiBox-root" theme={{...}} ...>
+                      <Insertion>
++                     <div className="MuiBox-root css-zf0iqh" suppressHydrationWarning={true}>
+-                     <style data-emotion="css-global 1t4lmtf" data-s="">
+
+[00:56:35.012] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:56:37.588] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/lib/emotion-cache.ts changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:56:37.644] Server  LOG     ✓ Compiled in 21ms
+[00:56:37.853] Server  ERROR   ⨯ TypeError: {imported module ./app/lib/emotion-cache.ts}.default is not a function
+[00:56:38.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:38.273] Browser ERROR   uncaughtError: TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$lib$2f$emotion$2d$cache$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__.default) is not a function
+[00:56:39.647] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:39.745] Server  ERROR   ⨯ ReferenceError: useMemo is not defined
+[00:56:39.765] Server  ERROR   ⨯ ReferenceError: useMemo is not defined
+[00:56:39.770] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:39.770] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:56:39.770] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:39.782] Server  ERROR   ⨯ ReferenceError: useMemo is not defined
+[00:56:39.805] Server  LOG     ✓ Compiled in 226ms
+[00:56:39.909] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:40.073] Browser ERROR   uncaughtError: ReferenceError: useMemo is not defined
+[00:56:42.413] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:42.525] Server  LOG     ✓ Compiled in 229ms
+[00:56:42.548] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:42.548] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./app/providers/theme-provider.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:56:42.548] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:56:42.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:42.946] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:56:44.148] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:44.430] Browser WARN    Image with src "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=300&h=200&fit=crop&q=80" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:56:49.308] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:52.918] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
