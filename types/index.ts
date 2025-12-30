@@ -12,8 +12,8 @@ export interface FormFieldState {
 // Represents how strong a password is
 export interface PasswordStrength {
   strength: number; // A number from 0 to 5 showing how many requirements it meets
-  label: 'Weak' | 'Fair' | 'Good' | 'Strong'; // A word describing the strength
-  color: string; // The color to show (red for weak, green for strong)
+  label: 'Weak' | 'Fair' | 'Good' | 'Strong' | ''; // A word describing the strength (empty if no password)
+  color: string; // The color to show (red for weak, green for strong, empty if no password)
 }
 
 // Represents the theme state and how to change it
